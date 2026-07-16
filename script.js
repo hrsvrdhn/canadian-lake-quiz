@@ -267,6 +267,8 @@ function startGame() {
         currentQuestion: null,
         answered: false
     };
+    // Reset hearts visually
+    els.lives.querySelectorAll('.heart').forEach(h => h.classList.remove('lost'));
     updateUI();
     showScreen('game');
     nextQuestion();
