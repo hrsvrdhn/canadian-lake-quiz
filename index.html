@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canadian Lake Name Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>Canadian Lake Quiz</h1>
+            <p class="subtitle">Canadian lake names are absurd. Can you spot the fake?</p>
+            <p class="description">Four lake names. Three are real Canadian lakes — one is made up. The real ones sound ridiculous. Good luck.</p>
+            <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <header class="game-header">
+                <div class="lives" id="lives">
+                    <span class="heart">&#10084;&#65039;</span>
+                    <span class="heart">&#10084;&#65039;</span>
+                    <span class="heart">&#10084;&#65039;</span>
+                </div>
+                <div class="stats">
+                    <span class="stat">Score: <strong id="score">0</strong></span>
+                    <span class="stat">Streak: <strong id="streak">0</strong></span>
+                    <span class="stat">Q: <strong id="question-num">1</strong>/300</span>
+                </div>
+            </header>
+
+            <div class="question-area">
+                <h2 class="question-text">Which one is <em>NOT</em> a real Canadian lake?</h2>
+                <div class="options" id="options">
+                    <button class="option-btn" data-index="0"></button>
+                    <button class="option-btn" data-index="1"></button>
+                    <button class="option-btn" data-index="2"></button>
+                    <button class="option-btn" data-index="3"></button>
+                </div>
+            </div>
+
+            <button id="next-btn" class="btn btn-secondary hidden">Next</button>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameover-screen" class="screen">
+            <h1 id="gameover-title">Game Over</h1>
+            <p class="final-score">Score: <strong id="final-score">0</strong></p>
+            <p class="final-streak">Best Streak: <strong id="best-streak">0</strong></p>
+            <button id="restart-btn" class="btn btn-primary">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
