@@ -187,6 +187,7 @@ const els = {
     streak: document.getElementById('streak'),
     questionNum: document.getElementById('question-num'),
     finalScore: document.getElementById('final-score'),
+    finalTotal: document.getElementById('final-total'),
     bestStreak: document.getElementById('best-streak'),
     gameoverTitle: document.getElementById('gameover-title')
 };
@@ -320,7 +321,9 @@ function handleAnswer(selectedIndex) {
     updateUI();
 
     if (state.lives <= 0) {
-        setTimeout(() => endGame(false), 1200);
+        // Hide next button to prevent continuing
+        els.nextBtn.classList.add('hidden');
+        setTimeout(() => endGame(false), 1500);
     } else {
         els.nextBtn.classList.remove('hidden');
     }
@@ -328,9 +331,10 @@ function handleAnswer(selectedIndex) {
 
 function endGame(victory) {
     els.finalScore.textContent = state.score;
+    els.finalTotal.textContent = state.questionNum;
     els.bestStreak.textContent = state.bestStreak;
     els.gameoverTitle.textContent = victory
-        ? "You beat the quiz!"
+        ? "You beat all 300!"
         : "Game Over";
     showScreen('gameover');
 }
